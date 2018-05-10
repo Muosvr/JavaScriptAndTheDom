@@ -37,7 +37,7 @@ console.log(banner.hasChildNodes()); //returns true or false
 console.log(banner.cloneNode(true)); // include child nodes
 console.log(banner.cloneNode(false));//do not include child nodes
 
-//p7 Traverse from one node to another
+//P7 Traverse from one node to another
 const bookList = document.querySelector("#book-list");
 console.log('The parent Node is: ', bookList.parentNode);
 console.log('The parent Element is: ', bookList.parentElement);
@@ -45,3 +45,20 @@ console.log('The parent Element of the parent Element is: ', bookList.parentElem
 
 console.log(bookList.childNodes); // getting the line breaks as well as the children
 console.log(bookList.children); // only getting the children
+
+//P8 Traverse from sibling to sibling
+console.log(bookList.nextSibling);
+console.log(bookList.nextElementSibling);
+console.log(bookList.previousSibiling);
+console.log(bookList.previousElementSibling);
+bookList.previousElementSibling.querySelector('p').innerHTML += '<br/>Too cool for anyone else';
+
+//P9 DOM events
+var btns = document.querySelectorAll('#book-list .delete');
+Array.from(btns).forEach(function(btn){
+  btn.addEventListener('click', function(e){
+    const li = e.target.parentElement;
+    li.parentNode.removeChild(li);
+  })
+})
+
