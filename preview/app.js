@@ -36,3 +36,12 @@ console.log(banner.nodeType);// return <div> or <p>...
 console.log(banner.hasChildNodes()); //returns true or false
 console.log(banner.cloneNode(true)); // include child nodes
 console.log(banner.cloneNode(false));//do not include child nodes
+
+//p7 Traverse from one node to another
+const bookList = document.querySelector("#book-list");
+console.log('The parent Node is: ', bookList.parentNode);
+console.log('The parent Element is: ', bookList.parentElement);
+console.log('The parent Element of the parent Element is: ', bookList.parentElement.parentElement);
+
+console.log(bookList.childNodes); // getting the line breaks as well as the children
+console.log(bookList.children); // only getting the children
