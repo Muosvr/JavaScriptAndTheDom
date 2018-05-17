@@ -117,7 +117,7 @@ addForm.addEventListener('submit', function(e){ //create eventListener for a sub
 // book.hasAttribute('class');
 // book.removeAttribute('class');
 
-//P15 Checkboxes & Change Events
+//P15 Checkboxes & change events
 const hideBox = document.querySelector('#hide');
 hideBox.addEventListener('change',function(e){
   if(hideBox.checked){
@@ -125,4 +125,19 @@ hideBox.addEventListener('change',function(e){
   }else{
     list.style.display =  'initial';
   }
-})
+});
+
+//P16 Create a search filter
+const searchBar = document.querySelector('#search-books');
+searchBar.addEventListener('keyup',function(e){
+  const term = e.target.value.toLowerCase();
+  const books = document.querySelectorAll('li');
+  books.forEach(function(item){
+    const title = item.textContent.toLowerCase();
+    if (title.indexOf(term) == -1){
+      item.style.display = 'none';
+    }else{
+      item.style.display = 'block'
+    }
+  });
+});
