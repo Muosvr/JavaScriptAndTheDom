@@ -71,11 +71,11 @@
 
 //P10 Event Bubbling
 
-var ListUl = document.querySelector('#book-list ul')
-ListUl.addEventListener('click', function(e){
+var list = document.querySelector('#book-list ul')
+list.addEventListener('click', function(e){
   if(e.target.className === 'delete'){
     var li = e.target.parentNode;
-    ListUl.removeChild(li);
+    list.removeChild(li);
   }
 })
 
@@ -106,7 +106,7 @@ addForm.addEventListener('submit', function(e){ //create eventListener for a sub
   deleteBtn.classList.add('delete');
   
   //append to page
-  ListUl.appendChild(li);
+  list.appendChild(li);
   
 })
 
@@ -116,3 +116,13 @@ addForm.addEventListener('submit', function(e){ //create eventListener for a sub
 // book.setAttribute('class','name-2');
 // book.hasAttribute('class');
 // book.removeAttribute('class');
+
+//P15 Checkboxes & Change Events
+const hideBox = document.querySelector('#hide');
+hideBox.addEventListener('change',function(e){
+  if(hideBox.checked){
+    list.style.display = 'none';
+  }else{
+    list.style.display =  'initial';
+  }
+})
