@@ -78,3 +78,33 @@ ListUl.addEventListener('click', function(e){
     ListUl.removeChild(li);
   }
 })
+
+//P11 Interacting with Forms
+const addForm = document.forms['add-book'];
+addForm.addEventListener('submit', function(e){ //create eventListener for a submit event (clicking the button in the form)
+  e.preventDefault(); //prevent default action of refreshing the page
+  const value = addForm.querySelector('input[type="text"]').value; //find value and store in the input field
+  console.log(value);
+
+//P12 Creating elements
+
+//Create elements
+  const li = document.createElement('li');
+  const bookText = document.createElement('span');
+  const deleteBtn = document.createElement('span');
+  
+  //Append to li item
+  li.appendChild(bookText);
+  li.appendChild(deleteBtn);
+  
+  //Assign text
+  bookText.textContent = value;
+  deleteBtn.textContent = 'Delete';
+  
+  //Add classes
+  bookText.classList.add('name');
+  deleteBtn.classList.add('delete');
+  
+  ListUl.appendChild(li);
+  
+})
