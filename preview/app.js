@@ -109,3 +109,10 @@ addForm.addEventListener('submit', function(e){ //create eventListener for a sub
   ListUl.appendChild(li);
   
 })
+
+//P14 Attributes
+// var book = document.querySelector('li:first-child.name');
+// book.getAttribute('class');
+// book.setAttribute('class','name-2');
+// book.hasAttribute('class');
+// book.removeAttribute('class');
