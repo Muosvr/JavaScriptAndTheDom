@@ -105,6 +105,7 @@ addForm.addEventListener('submit', function(e){ //create eventListener for a sub
   bookText.classList.add('name');
   deleteBtn.classList.add('delete');
   
+  //append to page
   ListUl.appendChild(li);
   
 })
