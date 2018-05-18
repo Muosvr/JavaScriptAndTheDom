@@ -141,3 +141,23 @@ searchBar.addEventListener('keyup',function(e){
     }
   });
 });
+
+//P17 Tabbed Content
+const tabs = document.querySelector('.tabs');
+const panels = document.querySelectorAll('.panel');
+
+tabs.addEventListener('click',function(e){
+  if(e.target.tagName == "LI");{//.tagName returns uppercase HTML
+    const targetPanel = document.querySelector(e.target.dataset.target);//find the target Panel using the dataset-target attribute
+    
+    panels.forEach(function(panel){
+      if(panel === targetPanel){
+        panel.classList.add('active');
+      }else{
+        panel.classList.remove('active');
+      }
+    })
+  }
+})
+
+//P18
